@@ -1,0 +1,37 @@
+// ==UserScript==
+// @name            Etsy Ad Removal Script
+// @author          Cody Whatley
+// @namespace       https://github.com/codytwhatley
+// @description     Script to remove Etsy ads missed by uBlock/AdBlock+
+// @license         Creative Commons Attribution License
+// @include         https://*.etsy.com/*
+// @version	        1.0
+// @require   		  https://code.jquery.com/jquery-3.5.1.js
+// @require    		  https://gist.githubusercontent.com/BrockA/2625891/raw/waitForKeyElements.js
+// @released        2020-11-18
+// @updated         2020-11-18
+// @compatible      Greasemonkey
+// ==/UserScript==
+ 
+/* 
+ * This file is a Greasemonkey user script. To install it, you need 
+ * the Firefox plugin "Greasemonkey" (URL: http://greasemonkey.mozdev.org/)
+ * After you installed the extension, restart Firefox and revisit 
+ * this script. Now you will see a new menu item "Install User Script"
+ * in your tools menu.
+ * 
+ * To uninstall this script, go to your "Tools" menu and select 
+ * "Manage User Scripts", then select this script from the list
+ * and click uninstall :-)
+ *
+ * Creative Commons Attribution License
+ * http://creativecommons.org/licenses/by/2.5/
+*/
+
+
+
+waitForKeyElements ("a.dedde01b46d6bf4d.display-inline-block.listing-link.logged", killNode);
+
+function killNode (elem) {
+    elem.remove();
+}
